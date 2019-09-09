@@ -1,0 +1,11 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "prettier"],
+  "rules": {
+    "spaced-comment": 0,
+    "no-return-await": 0,
+    "no-sequences": 0,
+    "eqeqeq": 0,
+    "no-return-assign": 0
+  }
+}

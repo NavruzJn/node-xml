@@ -1,0 +1,54 @@
+{
+  "name": "koa-redis-example",
+  "version": "1.0.0",
+  "description": "Get data from open api and store it",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "start": "npm run build && nodemon dist/index.js",
+    "serve": "npm run build && node dist/index.js",
+    "test": "npm run build && mocha --require @babel/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NavruzJn/node-xml.git"
+  },
+  "author": "Navruz Jandullaev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NavruzJn/node-xml/issues"
+  },
+  "homepage": "https://github.com/NavruzJn/node-xml#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.6.0",
+    "@koa/cors": "^3.0.0",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "ioredis": "^4.14.0",
+    "koa": "^2.8.1",
+    "koa-body": "^4.1.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-cors": "0.0.16",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.1",
+    "koa-onerror": "^4.1.0",
+    "koa-respond": "^2.1.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "lodash": "latest",
+    "log4js": "^5.1.0",
+    "path": "^0.12.7",
+    "xml2js": "^0.4.22",
+    "xml2json": "^0.11.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.4.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.5"
+  }
+}
