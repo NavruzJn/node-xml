@@ -31,9 +31,8 @@ router
 
     .get("/from/google", async ctx => {
       try {
-          await GoogleNews.getGoogleNews();
           ctx.status = 200;
-          ctx.body = await News.getNewsAll();
+          ctx.body = {status: await GoogleNews.getGoogleNews(ctx)};
       } catch (error) {
         console.log("error", error);
         ctx.status = 402;

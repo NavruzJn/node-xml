@@ -11,21 +11,25 @@ export class GoogleNews {
     constructor() {
         this._news = [];
     }
-    static async getGoogleNews() {
+    static async getGoogleNews(ctx) {
         let data = '';
         await https.get(googleNewsUrl, function (res) {
-            let news = [];
             if (res.statusCode >= 200 && res.statusCode < 400) {
                 res.on('data', function (data_) {
                     data += data_.toString();
                 });
                 res.on('end', async function () {
                     await parser.parseString(data, async function (err, result) {
-                        await News.getNewsFromGoogleUrl(result.rss.channel)
+                        await News.getNewsFromGoogleUrl(result.rss.channel);
                     });
                 });
+                res.on('error', function (err) {
+                    ctx.throw(err);
+                })
             }
         });
+
+        return true;
     }
 
     static setNews(news) {
