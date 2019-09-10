@@ -13,8 +13,8 @@ class News {
     return allNewsData[0].item.map(item => _.pick(item, ["title"]));
   }
 
-  static async getNewsAll() {
-    return await NewsModel.getNewsAll()
+  static async getNewsAllTitles() {
+    return await NewsModel.getNewsAllTitles()
   }
 
   static async getNews(id) {

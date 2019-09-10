@@ -62,14 +62,13 @@ export class NewsModel {
         return this._title;
     }
 
-    static async getNewsAll() {
-        let newsTitles = [];
-        const newsKeys = await redis.keys('*', async function (err, keys) {
-            keys.forEach(async (key) => {
-                newsTitles.push(await redis.hget(`hash:news/${key}`, "_title"));
-            })
+    static async getNewsAllTitles() {
+        let newsTitles;
+        const keys = await redis.keys('*');
+        return await Promise.all(keys.map(key => redis.hget(key, "_title"))).then(values => {
+            newsTitles = values;
+            return values;
         });
-        return newsTitles;
     }
 
     static async getNews(id) {

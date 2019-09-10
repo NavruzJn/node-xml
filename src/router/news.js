@@ -11,7 +11,7 @@ router
 
     .get("/", async ctx => {
       try {
-        ctx.response.body = await News.getNewsAll();
+          ctx.response.body = await News.getNewsAllTitles();
       } catch (error) {
         console.log("error", error);
         ctx.status = 402;
