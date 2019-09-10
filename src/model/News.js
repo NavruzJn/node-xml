@@ -64,7 +64,7 @@ export class NewsModel {
 
     static async getNewsAllTitles() {
         let newsTitles;
-        const keys = await redis.keys('*');
+        const keys = await redis.keys('hash:news*');
         return await Promise.all(keys.map(key => redis.hget(key, "_title"))).then(values => {
             newsTitles = values;
             return values;
