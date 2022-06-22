@@ -22,7 +22,7 @@
   "dependencies": {
     "@babel/runtime": "^7.6.0",
     "@koa/cors": "^3.0.0",
-    "async": "^3.1.0",
+    "async": "^3.2.2",
     "http": "0.0.0",
     "https": "^1.0.0",
     "ioredis": "^4.14.0",
